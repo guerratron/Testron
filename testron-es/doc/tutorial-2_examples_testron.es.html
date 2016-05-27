@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		 <meta name="description" content="Testron :: App Javascript para preguntas tipo 'test' - by GUERRATRON" /> 
+		 <meta name="keywords" content="testron,js,code,debug,test,tests,questions,answers,quiz,guerratron" /> 
+    <title>JSDoc: Testron :: App Javascript para preguntas tipo 'test' - by GUERRATRON</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css" />
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+		<link type="text/css" rel="stylesheet" href="styles/template.css" />
+    <link id="cssTheme" type="text/css" rel="stylesheet" href="styles/template-light.css" />
+    <link type="text/css" rel="stylesheet" href="styles/template-responsive.css" />
+</head>
+
+<body>
+
+<div id="main">
+
+  
+    <a href="http://guerratron.github.io/Testron" />
+  
+      <img class="logo" src="img/testron_logo.png" />
+  
+    </a>
+  
+
+    <br />
+    <h1 class="page-title">Tutorial: Ejemplos Testron: con diferentes objetos de entrada</h1>
+
+    <section>
+
+<header>
+    
+
+    <h2>Ejemplos Testron: con diferentes objetos de entrada</h2>
+</header>
+
+<article>
+    <!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="favicon.ico" sizes="24x24" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <meta name="description" content="Testron es una app Javascript para realizar tests, se muestran diferentes ejemplos según el objeto Test utilizado - by Juanjo Guerra" />
+    <meta name="keywords" content="Testron,test,tests,app,javascript,testron,question,answer,exam,JSON" />
+    <title>Testron a través de distintos objetos con estructura JSON</title>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- <link type="text/css" rel="stylesheet" href="css/tuto.css" /> -->
+    <link type="text/css" rel="stylesheet" href="css/testron.css" />
+    <!-- <script src="js/test2-electricity.js"> </script> -->
+    <script src="assets/test3-star-wars.js"> </script>
+    <script src="js/testron.min.js"> </script>
+    <style type="text/css">
+      #title, #summary {float:left; margin-left:10px;}
+      button{max-width:95%; min-width:48px;}
+      button>img{max-width:100%;}
+      table, tr, tbody{max-width:100%; color:black;}
+      table td{font-size:smaller; vertical-align: top; background: #eeeeee;}
+      table td.par{background: #dddddd;}
+      table tbody tr:first-child{text-align:center;}
+      table .col1, table .col2, table .col3, table .col4, table .col5{position:absolute; display:none; z-index:0; padding:4px;}
+      table pre{padding:6px; margin:4px; border:2px ridge maroon; background:lightYellow; color:#333333; font-weight:bolder;}
+      table tr.trButtons>td{float:left; margin:5px; max-width:14%;}
+      table td.objConstructor{background:lightGreen;}
+      table td.objJS, table td.objJS_Imported, table td.objJSON{background:lightBlue;}
+      table td.objString{background:orange;}
+      table tfoot{z-index:-1; display:table-footer-group; vertical-align:middle; opacity:0.9;}
+			.wrapperTitleProperty{font-size: 1.2em;}
+    </style>
+    <script type="text/javascript">
+      var tests, title, summary, contUI, contMarker, chkWithEvents;
+      //TESTRON CONFIGURATION
+      var conf={"container":"divUI", "markerContainer": "divMarker"};
+      //constructor
+      function with_Constructor(){
+        if (testron) {
+          title.innerHTML = "";
+          summary.innerHTML = "";
+          contUI.innerHTML = "";
+          contMarker.innerHTML = "";
+          title.innerHTML = "TEST 'ANYTHING' (Spanish)";
+          summary.innerHTML = "Ejemplo de '<b>Testron</b>' como una manera de utlizarlo con su <b>constructor</b> ...<br />";
+          summary.innerHTML += '<small style="background: brown; color: white; border-radius: 6px; box-shadow: 2px 2px 4px #333333;' +
+                             'padding: 6px; margin: 6px; float:left;">' +
+                             'Este método (<b>constructor</b>) es menos eficiente, genera temporizadores <br />' +
+                             'para cada pregunta hasta detectar su contenedor.</small>';
+          contUI.innerHTML = "";
+          contMarker.innerHTML = "";
+          var test = new testron.Test(
+                  {container: "divUI", markerContainer: "divMarker", 
+                  stopOnSuccess: false, digits: 2, precision: 2}
+          );
+          if (testron) { 
+            var question1 = test.createQuestion({num: 1, solution: 2, txt: "Pregunta 1 ???"});
+            var answer1A = question1.createAnswer({name: "A", txt: "Respuesta A"});
+            var answer1B = question1.createAnswer({name: "B", txt: "Respuesta B"});
+            var answer1C = question1.createAnswer({name: "C", txt: "Respuesta C"});
+            
+            var question2 = test.createQuestion({num: 2, solution: 3, txt: "Pregunta 2 ???"});
+            var answer2A = question2.createAnswer({name: "A", txt: "Respuesta A"});
+            var answer2B = question2.createAnswer({name: "B", txt: "Respuesta B"});
+            var answer2C = question2.createAnswer({name: "C", txt: "Respuesta C"});
+            
+            var question3 = test.createQuestion({num: 3, solution: 3, txt: "Pregunta 3 ???"});
+            var answer3A = question3.createAnswer({name: "A", txt: "Respuesta A"});
+            var answer3B = question3.createAnswer({name: "B", txt: "Respuesta B"});
+            var answer3C = question3.createAnswer({name: "C", txt: "Respuesta C"});
+            
+            var question4 = test.createQuestion({num: 4, solution: 1, txt: "Pregunta 4 ???"});
+            var answer4A = question4.createAnswer({name: "A", txt: "Respuesta A"});
+            var answer4B = question4.createAnswer({name: "B", txt: "Respuesta B"});
+            var answer4C = question4.createAnswer({name: "C", txt: "Respuesta C"});
+
+            contUI.appendChild(test.toHtml());
+            
+            var marker = test.createMarker();
+            if (marker) { contMarker.appendChild(marker.toHtml()); }
+            //START
+            test.emitMarker();
+            withEvents(testron);
+          }
+        }
+        return [test];
+      }
+      //JS object
+      function with_JS_Object(){
+        title.innerHTML = "";
+        summary.innerHTML = "";
+        contUI.innerHTML = "";
+        contMarker.innerHTML = "";
+        title.innerHTML = "TEST 'ELECTRICITY' (English)";
+        summary.innerHTML = "Ejemplo de '<b>Testron</b>' como una forma de utilizarlo con un objeto Javascript para contruir los tests ...";
+/** Objeto javascript (con estructura JSON) apto para la creación de test tipo 'testron'*/
+var tests = {
+  testrons: [
+    {
+      conf: {
+        className:"testron test-80",container:"container",markerContainer:"container2",
+        remove:true,markerRemove:true,nQ:4,nA:12,digits:2,precision:2,
+        stopOnSuccess:true,charset:"utf-8"
+      },
+      questions: [
+        {
+          conf: {
+            num:1,nA:3,solution:2,charset:"utf-8",
+            txt:"¿ Cuántas magnitudes eléctricas tiene la \"Ley de Ohm\" ?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"Una (&#x2776;)"},
+            {name:"B",charset:"utf-8",txt:"Tres (&#x2778;)"},
+            {name:"C",charset:"utf-8",txt:"Cero patatero (&#x274D;)"}
+          ]
+        },
+        {
+          conf: {
+            num:2,nA:3,solution:3,charset:"utf-8",
+            txt:"¿ Cuál es el sentido real de la corriente eléctrica ?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"Positivo a Negativo (&CirclePlus; &rarr; &CircleMinus;)"},
+            {name:"B",charset:"utf-8",txt:"Depende de si es AC o DC (&DoubleLeftRightArrow;)"},
+            {name:"C",charset:"utf-8",txt:"Negativo a Positivo (&CircleMinus; &larr; &CirclePlus;)"}
+          ]
+        },
+        {
+          conf: {
+            num:3,nA:3,solution:3,charset:"utf-8",
+            txt:"¿ Cuál es la formulación correcta para representar la \"Ley de Ohm\"?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"V = I / R"},
+            {name:"B",charset:"utf-8",txt:"I = V * R"},
+            {name:"C",charset:"utf-8",txt:"V = I * R"}
+          ]
+        },
+        {
+          conf: {
+            num:4,nA:3,solution:1,charset:"utf-8",
+            txt:"en un ciruito DC en el cual se dobla la Resistencia, ¿ qué le sucede a la Potencia ?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"Disminuye hasta &frac14; de la inicial"},
+            {name:"B",charset:"utf-8",txt:"Aumenta el doble"},
+            {name:"C",charset:"utf-8",txt:"Se mantiene constante al no verse afectada por la resistencia"}
+          ]
+        }
+      ]
+    }
+  ]
+};
+        //TESTRON
+        tests = testron.parseTestrons(tests, conf);
+        withEvents(testron);
+        return tests;
+      }
+      //JS Imported object
+      function with_JS_Imported_Object(){
+        title.innerHTML = "";
+        summary.innerHTML = "";
+        contUI.innerHTML = "";
+        contMarker.innerHTML = "";
+        title.innerHTML = "TEST 'STAR WARS' (English)";
+        summary.innerHTML = "Ejemplo de '<b>Testron</b>' como una forma de utlizarlo con un objeto Javascript Importado para construir los tests ...";
+        tests = testrons$star_wars;
+        //TESTRON
+        tests = testron.parseTestrons(tests, conf);
+        withEvents(testron);
+        return tests;
+      }
+      //JSON object
+      function with_JSON_Object(){
+        title.innerHTML = "";
+        summary.innerHTML = "";
+        contUI.innerHTML = "";
+        contMarker.innerHTML = "";
+        title.innerHTML = "TEST 'HORSES' (Spanish)";
+        summary.innerHTML = "Ejemplo de '<b>Testron</b>' como una manera de utilizarlo con un objeto JSON para construir los tests ...";
+/** Objeto javascript (con estructura JSON) apto para la creación de test tipo 'testron'*/
+tests =
+  { "testrons": [
+      {
+        "conf": {"className":"testron test-80","container":"container","markerContainer":"container2", "remove":true,"markerRemove":true,"nQ":4,"nA":12,"digits":2,"precision":2,"stopOnSuccess":true,"charset":"utf-8"},
+        "questions": [
+          {
+            "conf": {"num":1,"nA":3,"solution":2,"charset":"utf-8","txt":"¿ Cómo se llamaba el caballo de 'Don Quijote' ?"},
+            "answers": [
+              {"name":"A","charset":"utf-8","txt":"Babiera"},
+              {"name":"B","charset":"utf-8","txt":"Rocinante"},
+              {"name":"C","charset":"utf-8","txt":"No tenía dinero p'a caballo, iba en burro"}
+            ]
+          },
+          {
+            "conf": {"num":2,"nA":3,"solution":3,"charset":"utf-8","txt":"¿ De qué color era el caballo blanco de <i>Santiago</i> ?"},
+            "answers": [
+              {"name":"A","charset":"utf-8","txt":"Azul"},
+              {"name":"B","charset":"utf-8","txt":"transparente"},
+              {"name":"C","charset":"utf-8","txt":"Blancoooooooo !!!"}
+            ]
+          },
+          {
+            "conf": {"num":3,"nA":3,"solution":3,"charset":"utf-8","txt":"¿ Cómo se llamaba el famoso caballo del 'Cid Campeador' ?"},
+            "answers": [
+              {"name":"A","charset":"utf-8","txt":"Rocinante"},
+              {"name":"B","charset":"utf-8","txt":"Atila"},
+              {"name":"C","charset":"utf-8","txt":"Babieca"}
+            ]
+          },
+          {
+            "conf": {"num":4,"nA":3,"solution":1,"charset":"utf-8","txt":"¿ Cuántas patas tiene un caballito pequeño ?"},
+            "answers": [
+              {"name":"A","charset":"utf-8","txt":"si es de mar, ninguna"},
+              {"name":"B","charset":"utf-8","txt":"depende de lo pequeño que sea"},
+              {"name":"C","charset":"utf-8","txt":"infinitas"}
+            ]
+          }
+        ]
+      }
+    ]
+  };
+        //TESTRON
+        tests = testron.parseTestrons(tests, conf);
+        withEvents(testron);
+        return tests;
+      }
+      //String
+      function with_JSON_String(){
+        title.innerHTML = "";
+        summary.innerHTML = "";
+        contUI.innerHTML = "";
+        contMarker.innerHTML = "";
+        title.innerHTML = "TEST 'ANYTHING' (Spanish)";
+        summary.innerHTML = "Ejemplo de '<b>Testron</b>' como una forma de utilizarlo con una cadena (con formato JSON) para construir los tests ...";
+        /** String javascript (con estructura JSON) apto para la creación de test tipo 'testron'*/
+        tests = '{"testrons": [ {"conf": {"className": "testron test-80", "markerContainer": "divMarker", "stopOnSuccess": true, "digits": 2, "precision": 2}, ';
+        tests += '"questions": [ {"conf": {"num": 1, "solution": 2, "txt": "Pregunta 1 ???"}, "answers": [';
+        tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+        tests += ']}, {"conf": {"num": 2, "solution": 3, "txt": "Pregunta 2 ???"}, "answers": [';
+        tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+        tests += ']}, {"conf": {"num": 3, "solution": 3, "txt": "Pregunta 3 ???"}, "answers": [';
+        tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+        tests += ']}, {"conf": {"num": 4, "solution": 1, "txt": "Pregunta 4 ???"}, "answers": [';
+        tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+        tests += ']}]}]}';
+        //TESTRON
+        tests = testron.parseTestrons(tests, conf);
+        withEvents(testron);
+        return tests;
+      }
+      
+      function withEvents(testron){
+          //contMarker.style.visibility = "hidden";
+          testron.onOk(function(answer, marker){
+            if (chkWithEvents.checked) {
+              alert("OK: " + answer.parent.num + "[" + answer.name + "] ). " + marker.score);
+              contMarker.style.visibility = "visible";
+            }
+          });
+          testron.onFail(function(answer, marker){
+            if (chkWithEvents.checked) {
+              alert("FAIL: " + answer.parent.num + "[" + answer.name + "] ). " + marker.score);
+            }
+          });
+          testron.onClick(function(answer, marker){
+            if (chkWithEvents.checked) {
+              alert("CLICK: " + answer.parent.num + "[" + answer.name + "] ). " + marker.score);
+            }
+          });
+          testron.onNext(function(question, marker){
+            if (chkWithEvents.checked) {
+              alert("NEXT: " + question.num + "). " + marker.score);
+            }
+          });
+          testron.onMarker(function(marker){
+            if (chkWithEvents.checked) {
+              alert("MARKER: " + marker.score);
+            }
+          });
+          testron.onFinished(function(test){
+            if (chkWithEvents.checked) {
+              alert("TEST: " + test.id);
+            }
+          });
+      }
+
+      function repetitive(num, total){
+        var col = document.getElementsByClassName("col"+num);
+        col = (col && col.length > 0) ? col[0] : null; 
+        if (col) {
+          var pre = col.getElementsByTagName("pre")[0];
+          if (pre) {
+            var obj = document.getElementById("obj"+num);
+            if (obj) {
+              obj.addEventListener("mouseover", function(){
+                for (var i = 1; i <= total; i++) {
+                  if (num !== i) {
+                    var colOther = document.getElementsByClassName("col" + i);
+                    colOther = (colOther && (colOther.length > 0)) ? colOther[0] : null;
+                    if (colOther) { colOther.style.display = "none"; }
+                  }
+                }
+                col.style.display="block";
+                col.style.zIndex="100";
+              });
+            }
+            pre.addEventListener("mouseout", function(){
+              col.style.display="none";
+              col.style.zIndex="0";
+            });
+          }
+        }
+        cols = null; //NULLIFY PATTERN
+      }
+      //APPLY EVENTS STYLES
+      function styleEvents(){
+        var total = 5;
+        for (var i = 1; i <= total; i++) {
+          repetitive(i, total);
+        }
+        //CONTAINERS
+        contUI.style.width = "70%";
+        contUI.style.cssFloat = "left";
+        contMarker.style.width = "30%";
+        contMarker.style.cssFloat = "left";
+        contMarker.style.position = "fixed";
+        contMarker.style.left = contUI.offsetLeft + contUI.offsetWidth+"px";//"5%";
+        contMarker.style.top = (contUI.offsetTop/4)+"px";//"5%";
+        contMarker.style.overflowX = "auto";
+      }
+      
+      function calculateStyle(elem, pseudo, cssProp){
+        if(!elem || !elem.style || !cssProp) { return null; }
+        pseudo = pseudo || null;
+        var strValue = "";
+        try {
+          if(window.getComputedStyle){
+            strValue = window.getComputedStyle(elem, pseudo).getPropertyValue(cssProp);
+          } else if (elem.currentStyle){//IE
+            strValue = elem.currentStyle[cssProp];
+          }
+        } catch (e) {}
+        return strValue;
+      }
+      
+      //MAIN
+      window.addEventListener('DOMContentLoaded',
+        function DOMContentLoaded_BIS(){
+          title= document.getElementById("title");
+          summary= document.getElementById("summary");
+          contUI= document.getElementById("divUI");
+          contMarker = document.getElementById("divMarker");
+          chkWithEvents = document.getElementById("with-events");
+          chkWithEvents.checked = false;
+          styleEvents();
+        }
+      , false);
+    </script>
+  </head>
+  <body>
+    <div style="width:100%;">
+      <table>
+        <!--  <caption>Simple Objetos:</caption> -->
+        <caption><h2>Seleccionar una forma para parsear una "batería de preguntas":</h2></caption>
+        <thead>
+          <tr><td></td></tr>
+        </thead>
+        <tfoot>
+          <tr>
+              <td><span style="background:lightGreen;">&emsp;</span> Constructor. &emsp; 
+                  <span style="background:lightBlue;">&emsp;</span> Objeto. &emsp; 
+                  <span style="background:orange;">&emsp;</span> Cadena.</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr class="trButtons">
+            <td class="objConstructor">
+              <button id="obj1" onclick="with_Constructor();" title="CONSTRUCTOR"><img src="img/btn_constructor.png" alt="constructor_logo" /></button>
+            </td>
+            <td class="par objJS">
+              <button id="obj2" onclick="with_JS_Object();" title="CON OBJETO JS"><img src="img/btn_js.png" alt="js_logo" /></button>
+            </td>
+            <td class="par objJS_Imported">
+              <button id="obj3" onclick="with_JS_Imported_Object();" title="CON OBJETO JS IMPORTADO"><img src="img/btn_js-imported.png" alt="js_imported_logo" /></button>
+            </td>
+            <td class="objJSON">
+              <button id="obj4" onclick="with_JSON_Object();"  title="CON OBJETO JSON" ><img src="img/btn_json.png" alt="json_logo" /></button>
+            </td>
+            <td class="par objString">
+              <button id="obj5" onclick="with_JSON_String();" title="CON CADENA CON FORMATO JSON"><img src="img/btn_string.png" alt="string_logo" /></button>
+            </td>
+          </tr>
+          <tr class="trCode">
+            <td class="col1">
+              <pre>
+//CONSTRUCTOR
+var test = new testron.Test(
+  {container: "divUI", markerContainer: "divMarker", 
+  stopOnSuccess: false, digits: 2, precision: 2}
+);
+if (testron) {
+  var question1 = test.createQuestion({num: 1, solution: 2, txt: "Pregunta 1 ???"});
+  var answer1A = question1.createAnswer({name: "A", txt: "Respuesta A"});
+  var answer1B = question1.createAnswer({name: "B", txt: "Respuesta B"});
+  var answer1C = question1.createAnswer({name: "C", txt: "Respuesta C"});
+  
+  var question2 = test.createQuestion({num: 2, solution: 3, txt: "Pregunta 2 ???"});
+  var answer2A = question2.createAnswer({name: "A", txt: "Respuesta A"});
+  var answer2B = question2.createAnswer({name: "B", txt: "Respuesta B"});
+  var answer2C = question2.createAnswer({name: "C", txt: "Respuesta C"});
+  
+  var question3 = test.createQuestion({num: 3, solution: 3, txt: "Pregunta 3 ???"});
+  var answer3A = question3.createAnswer({name: "A", txt: "Respuesta A"});
+  var answer3B = question3.createAnswer({name: "B", txt: "Respuesta B"});
+  var answer3C = question3.createAnswer({name: "C", txt: "Respuesta C"});
+  
+  var question4 = test.createQuestion({num: 4, solution: 1, txt: "Pregunta 4 ???"});
+  var answer4A = question4.createAnswer({name: "A", txt: "Respuesta A"});
+  var answer4B = question4.createAnswer({name: "B", txt: "Respuesta B"});
+  var answer4C = question4.createAnswer({name: "C", txt: "Respuesta C"});
+
+  var container = document.getElementById("contUI");
+  container.appendChild(test.toHtml());
+  var marker = test.createMarker();
+  if (marker) { container2.appendChild(marker.toHtml()); }
+  //START
+  test.emitMarker();
+}
+              </pre>
+            </td>
+            <td class="par col2">
+              <pre>
+//CON OBJETO JS (ESTRUCTURA JSON)
+/** Objeto javascript (con estructura JSON) apto para la creación de test tipo 'testron'*/
+tests = {
+  testrons: [
+    {
+      conf: {
+        className:"testron test-80",container:"container",markerContainer:"container2",
+        remove:true,markerRemove:true,nQ:4,nA:12,digits:2,precision:2,
+        stopOnSuccess:true,charset:"utf-8"
+      },
+      questions: [
+        {
+          conf: {
+            num:1,nA:3,solution:2,charset:"utf-8",
+            txt:"¿ Cuántas magnitudes eléctricas tiene la \"Ley de Ohm\" ?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"Una (&#x2776;)"},
+            {name:"B",charset:"utf-8",txt:"Tres (&#x2778;)"},
+            {name:"C",charset:"utf-8",txt:"Cero patatero (&#x274D;)"}
+          ]
+        },
+        {
+          conf: {
+            num:2,nA:3,solution:3,charset:"utf-8",
+            txt:"¿ Cuál es el sentido real de la corriente eléctrica ?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"Positivo a Negativo (&CirclePlus; &rarr; &CircleMinus;)"},
+            {name:"B",charset:"utf-8",txt:"Depende de si es AC o DC (&DoubleLeftRightArrow;)"},
+            {name:"C",charset:"utf-8",txt:"Negativo a Positivo (&CircleMinus; &larr; &CirclePlus;)"}
+          ]
+        },
+        {
+          conf: {
+            num:3,nA:3,solution:3,charset:"utf-8",
+            txt:"¿ Cuál es la formulación correcta para representar la \"Ley de Ohm\"?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"V = I / R"},
+            {name:"B",charset:"utf-8",txt:"I = V * R"},
+            {name:"C",charset:"utf-8",txt:"V = I * R"}
+          ]
+        },
+        {
+          conf: {
+            num:4,nA:3,solution:1,charset:"utf-8",
+            txt:"en un ciruito DC en el cual se dobla la Resistencia, ¿ qué le sucede a la Potencia ?"
+          },
+          answers: [
+            {name:"A",charset:"utf-8",txt:"Disminuye hasta &frac14; de la inicial"},
+            {name:"B",charset:"utf-8",txt:"Aumenta el doble"},
+            {name:"C",charset:"utf-8",txt:"Se mantiene constante al no verse afectada por la resistencia"}
+          ]
+        }
+      ]
+    }
+  ]
+};
+              </pre>
+            </td>
+            <td class="col3">
+              <pre>
+//CON OBJETO JS IMPORTADO
+Importar en la sección Header-HTML un archivo de test con una batería de preguntas, eg:
+  &lt;script src="js/test3-star-wars.js"&gt; &lt;/script&gt;
+y escribir el script:
+  tests = starWars; //aquí "starWars" es la variable en el archivo importado.
+  //TESTRON
+  tests = testron.parseTestrons(tests, conf);
+              </pre>
+            </td>
+            <td class="col4">
+              <pre>
+//CON OBJETO JSON
+{ "testrons": 
+  [
+    {
+      "conf": {"className":"testron test-80", "container":"container", "markerContainer":"container2", 
+               "remove":true, "markerRemove":true, "nQ":4, "nA":12, "digits":2, "precision":2, 
+               "stopOnSuccess":true, "charset":"utf-8"},
+      "questions": [
+        {
+          "conf": {"num":1, "nA":3, "solution":2, "charset":"utf-8", 
+                   "txt":"¿ Cómo se llamaba el caballo de 'Don Quijote' ?"},
+          "answers": [
+            {"name":"A", "charset":"utf-8", "txt":"Babiera"},
+            {"name":"B", "charset":"utf-8", "txt":"Rocinante"},
+            {"name":"C", "charset":"utf-8", "txt":"No tenía dinero p'a caballo, iba en burro"}
+          ]
+        },
+        {
+          "conf": {"num":2, "nA":3, "solution":3, "charset":"utf-8", 
+                   "txt":"¿ De qué color era el caballo blanco de <i>Santiago</i> ?"},
+          "answers": [
+            {"name":"A", "charset":"utf-8", "txt":"Azul"},
+            {"name":"B", "charset":"utf-8", "txt":"transparente"},
+            {"name":"C", "charset":"utf-8", "txt":"Blancoooooooo !!!"}
+          ]
+        },
+        {
+          "conf": {"num":3, "nA":3, "solution":3, "charset":"utf-8", 
+                   "txt":"¿ Cómo se llamaba el famoso caballo del 'Cid Campeador' ?"},
+          "answers": [
+            {"name":"A", "charset":"utf-8", "txt":"Rocinante"},
+            {"name":"B", "charset":"utf-8", "txt":"Atila"},
+            {"name":"C", "charset":"utf-8", "txt":"Babieca"}
+          ]
+        },
+        {
+          "conf": {"num":4, "nA":3, "solution":1, "charset":"utf-8", 
+                   "txt":"¿ Cuántas patas tiene un caballito pequeño ?"},
+          "answers": [
+            {"name":"A", "charset":"utf-8", "txt":"si es de mar, ninguna"},
+            {"name":"B", "charset":"utf-8", "txt":"depende de lo pequeño que sea"},
+            {"name":"C", "charset":"utf-8", "txt":"infinitas"}
+          ]
+        }
+      ]
+    }
+  ]
+}
+              </pre>
+            </td>
+            <td class="col5">
+              <pre>
+//CON CADENA (FORMATO JSON)
+var tests = '{"testrons": [ {"conf": {"className": "test-80", "markerContainer": "divMarker", ';
+    tests += '"stopOnSuccess": true, "digits": 2, "precision": 2}, ';
+    tests += '"questions": [ {"conf": {"num": 1, "solution": 2, "txt": "Pregunta 1 ???"}, "answers": [';
+    tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+    tests += ']}, {"conf": {"num": 2, "solution": 3, "txt": "Pregunta 2 ???"}, "answers": [';
+    tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+    tests += ']}, {"conf": {"num": 3, "solution": 3, "txt": "Pregunta 3 ???"}, "answers": [';
+    tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+    tests += ']}, {"conf": {"num": 4, "solution": 1, "txt": "Pregunta 4 ???"}, "answers": [';
+    tests += '{"name": "A", "txt": "Respuesta A"}, {"name": "B", "txt": "Respuesta B"}, {"name": "C", "txt": "Respuesta C"}';
+    tests += ']}]}, {"another": "test"}]}';
+    
+    var ts = testron.parseTestrons(tests, {container: "divUI"});
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <label for="with-events" title="mostrar los eventos del Test">Con Eventos: </label><input id="with-events" name="with-events" type="checkbox" value="0"  title="mostrar los eventos del Test" />
+      <code style="font-size:xx-small;"><b>ACIERTOS</b>: <span style="color:green;">UPDATE-MARKER -> [FINISH || NEXT]  -> OK -> CLICK</span> , <b>FALLOS</b>: <span style="color:red;">UPDATE-MARKER -> FAIL -> CLICK</span></code>
+    </div>
+<hr />
+    <br style="clear:both;" />
+    <h3 id="title">...</h3>
+    <h4 id="summary">...</h4>
+    <br style="clear:both;" />
+    
+    <!-- <div id="divOut">&nbsp;</div> -->
+    
+    <div id="divUI"></div>
+    <div id="divMarker" style="background:lightBlue; border-radius: 6px;"></div>
+  </body>
+</html>
+</article>
+
+</section>
+
+</div>
+
+<nav>
+    <h2 class="itemsNav"><a href="index.html">Home</a></h2><div class="container-button-menu media600"><i class="button-menu media600">&nabla;</i></div><h3 class="itemsNav-media600 media600"><a href="index.html">Home</a></h3><div class="itemsNav"><h3>Classes</h3><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Classes</h4><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav"><h3>Events</h3><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Events</h4><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav"><h3>Namespaces</h3><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Namespaces</h4><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav"><h3>Tutorials</h3><ul><li><a href="tutorial-1_tuto_testron.es.html">Tuto. Tutorial Testron</a></li><li><a href="tutorial-2_examples_testron.es.html">Ejemplos Testron: con diferentes objetos de entrada</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Tutorials</h4><ul><li><a href="tutorial-1_tuto_testron.es.html">Tuto. Tutorial Testron</a></li><li><a href="tutorial-2_examples_testron.es.html">Ejemplos Testron: con diferentes objetos de entrada</a></li></ul></div>
+</nav>
+
+<br class="clear">
+
+
+	<footer>
+			<hr /> Documentación generada por <strong><a href='mailto:dinertron@gmail.com' title='author'>GuerraTron</a></strong> el <em>Fri May 27 2016 13:29:59 GMT+0200 (Hora de verano romance)</em> <br /> &copy; <em>Juan Jose Guerra Haba (c) 2016</em> <hr />
+	</footer>
+
+  <div id="credits">
+    <small class="doctronCredits">based on the <em>'Doctron template'</em> <a href="http://guerratron.github.io/doctron" title="Doctron GitHub template"><img src="img/doctron-github-mini.png" /></a> &emsp; by <a href="mailto:dinertron@gmail.com" /> <img src="img/guerratron-logo-mini.png" title="Guerratron" /></a></small>
+  </div>
+
+  
+    <select class="changeTheme" id="selCssTheme" default="light" title="change theme">
+      <option value="light" selected>Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  
+  
+<a data-scroll data-options='{ "easing": "easeOutQuad" }' class="totop" href="#" title="to Top"><span style="font-size: x-large">&Delta;</span></a>
+
+
+
+
+<script> prettyPrint(); </script>
+<script type="text/javascript" src="scripts/linenumber.js"> </script>
+<script type="text/javascript" src="scripts/smooth-scroll/smooth-scroll.min.js"> </script>
+<script type="text/javascript" src="scripts/template.js"> </script>
+
+</body>
+</html>

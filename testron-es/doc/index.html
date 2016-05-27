@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		 <meta name="description" content="Testron :: App Javascript para preguntas tipo 'test' - by GUERRATRON" /> 
+		 <meta name="keywords" content="testron,js,code,debug,test,tests,questions,answers,quiz,guerratron" /> 
+    <title>JSDoc: Testron :: App Javascript para preguntas tipo 'test' - by GUERRATRON</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css" />
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+		<link type="text/css" rel="stylesheet" href="styles/template.css" />
+    <link id="cssTheme" type="text/css" rel="stylesheet" href="styles/template-light.css" />
+    <link type="text/css" rel="stylesheet" href="styles/template-responsive.css" />
+</head>
+
+<body>
+
+<div id="main">
+
+  
+    <a href="http://guerratron.github.io/Testron" />
+  
+      <img class="logo" src="img/testron_logo.png" />
+  
+    </a>
+  
+
+    <br />
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+		
+				<h3> </h3>
+		
+				
+
+
+
+
+
+
+
+    
+
+		
+		
+				<section>
+						
+						<article><blockquote>
+<hr>
+<p>  'Testron' (API JS) - Aplicación Javascript para preguntas tipo 'tests'.<br>  Author: Juan José Guerra Haba - <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x64;&#105;&#x6e;&#x65;&#114;&#116;&#x72;&#x6f;&#110;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x64;&#105;&#x6e;&#x65;&#114;&#116;&#x72;&#x6f;&#110;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a> - Mayo de 2016<br>  License: Free BSD. &amp; Open GPL v.3. Keep credit, please.<br>  Versión: 1.0.0 BETA<br>  File: testron.js               Main Class: testron.Test.js  </p>
+<hr>
+</blockquote>
+<h1>TESTRON</h1><p><a href="http://guerratron.github.io/Testron" title="Página web Testron"><img src="img/Testron_logo.png" alt="logo Testron" title="Testron GitHub page"></a>
+Es una <strong>API Javascript</strong> para realizar preguntas tipo <em>test</em>.
+<a href="img/testronUI.png" title="Testron UI"><img src="img/testronUI.png" alt="testronUI_img" style="width: 150px;" /></a></p>
+<h2>DESCRIPCIÓN</h2><p>Puede utilizarse como método preparatorio para exámenes academicos u oposiciones. Sólo necesita el archivo de preguntas con una estructura válida. Este archivo puede estar en formato JSON (objeto o cadena) u Objeto Javascript con una variable declarada.<br>Esta rígida estructura puede contener parámetros de configuración (la propiedad <strong>conf</strong>) donde especificar por ejemplo los contenedores para la Interfaz de Usuario en la cual embeber las cuestiones y el Marcador con información y botonera, o si se permite seleccionar varias respuestas o una sólo, el juego de caracteres a utilizar, etc.  </p>
+<blockquote>
+<p>Este <em>namespace</em> utiliza profúsamente funciones de utilidad de un objeto interno implementado en el mismo archivo, el objeto <strong>'util'</strong>, el cual contiene métodos y objetos estáticos, que pueden ser usados fuera del mismo, utilizando su <em>'classpath'</em>.<br>También contiene las clases <strong>Test</strong>, <strong>Test.Marker</strong>, <strong>Test.Question</strong> and <strong>Tests.Question.Answer</strong>, pero es más cómodo utilizar un único método, el cual desarrollará todo el trabajo de forma automatizada:  </p>
+<pre class="prettyprint source lang-javascript"><code>
+ var tests = testron.parseTestrons (test, conf);</code></pre><p>Aquí <em>test</em> representa una <em>batería-de-preguntas</em></p>
+</blockquote>
+<h2>CARACTERÍSTICAS</h2><ol>
+<li>Completamente <em>POO</em></li>
+<li>Personalizable por <strong>CSS</strong></li>
+<li>Cross-browser</li>
+<li>Pilosofía MVC</li>
+<li><em>HTML5</em> y <em>CSS3</em>.  </li>
+<li>Reducción al <strong>mínimo código</strong> a utilizar por el usuario.</li>
+</ol>
+<h2>USO</h2><p>La librería <strong>testron</strong> puede utilizarse de varias formas:</p>
+<ol>
+<li>Por un puro <strong>Objeto Javascript</strong> que respete la estructura necesaria (see <strong>STRUCTURE TEST</strong>).</li>
+<li>A través de un <strong>objeto JSON</strong></li>
+<li>Con una <strong>cadena</strong> pura con formato JSON.</li>
+<li>O de la forma clásica: Con su <strong>constructor</strong>. (menos aconsejable)</li>
+</ol>
+<p>Eg:  </p>
+<pre class="prettyprint source lang-javascript"><code>
+  var tests1 = new testron.Test(objTestJSON, 
+                                {container: &quot;containerUI&quot;, 
+                                markerContainer: &quot;containerMarker&quot;});</code></pre><p>O:  (PREFERIBLEMENTE)</p>
+<pre class="prettyprint source lang-javascript"><code>
+  var tests = testron.parseTestron(objTestronJSON, 
+                                  {container: &quot;containerUI&quot;, 
+                                  markerContainer: &quot;containerMarker&quot;});</code></pre><p>luego pueden utilizarse <strong>eventos</strong> para realizar acciones condicionadas por sus <strong>listeners</strong>:</p>
+<pre class="prettyprint source lang-javascript"><code>
+  testron.onClick(function(answer, marker){
+      alert(&quot;CLICK: &quot; + answer.parent.num + 
+            &quot;[&quot; + answer.name + &quot;] ). &quot; + marker.score);
+      contMarker.style.visibility = &quot;hidden&quot;;
+  });
+  testron.onFinished(function(test){
+      alert(&quot;FINISHED TEST: &quot; + test.id);
+      contMarker.style.visibility = &quot;visible&quot;;
+  });</code></pre><blockquote>
+<p>Por supuesto se debe cargar previamente el <strong>script</strong> en la cabecera HTML. (sección <em>header</em>) </p>
+<pre class="prettyprint source lang-HTML"><code>
+ &lt;script type=&quot;text/javascript&quot; src=&quot;testron.js&quot;>&lt;/script></code></pre></blockquote>
+<h2>API Pública</h2><ul>
+<li>Constructor<pre class="prettyprint source lang-javascript"><code>testron.Test (test-questions object);</code></pre></li>
+<li>Getters <pre class="prettyprint source lang-javascript"><code>getTests ();
+addTest (test-questions object);
+removeTest (test-questions object);
+resetTests ();</code></pre></li>
+<li>OTROS METHODS<pre class="prettyprint source lang-javascript"><code>parseTestrons (tests-questions object);
+toJSON ();</code></pre></li>
+<li>OBJECTOS INTERNOS<ul>
+<li>util<pre class="prettyprint source lang-javascript"><code>toPrecision (floatNumber, precision);
+toDecimals (floatNumber, precision);
+toDigits (num, digits, sign);
+icos [icons object]
+addEvent (elem, eventType, handler);
+... algunos listeners ...</code></pre></li>
+</ul>
+</li>
+<li>EVENTOS<pre class="prettyprint source lang-javascript"><code>onOk (function listenerOk (answer, marker) { ... });
+onFail (function listenerFail (answer, marker) { ... });
+onClick (function listenerClick (answer, marker) { ... });
+onNext (function listenerNext (question, marker) { ... });
+onMarker (function listenerUpdateMarker (marker) { ... });
+onFinished (function listenerFinished (test) { ... });</code></pre></li>
+</ul>
+<h2>ESTRUCTURA <small>para los objetos 'tests'</small></h2><p>Esta estructura es rígida y debe ser como el ejemplo siguiente:</p>
+<pre class="prettyprint source lang-javascript"><code>{
+    testron: [
+        {
+            conf: {className: &quot;test-80&quot;, container: &quot;container1&quot;, 
+                   markerContainer: &quot;container2&quot;, stopOnSuccess: true, 
+                   digits: 2, precision: 2},
+            questions: [
+                {
+                    conf: {num: 1, solution: 2, txt: &quot;Pregunta 1 ???&quot;},
+                    answers: [
+                        {name: &quot;A&quot;, txt: &quot;Respuesta A&quot;},
+                        {name: &quot;B&quot;, txt: &quot;Respuesta B&quot;},
+                        {name: &quot;C&quot;, txt: &quot;Respuesta C&quot;}
+                    ]
+                },
+                {
+                    conf: {num: 2, solution: 3, txt: &quot;Pregunta 2 ???&quot;},
+                    answers: [
+                        {name: &quot;A&quot;, txt: &quot;Respuesta A&quot;},
+                        {name: &quot;B&quot;, txt: &quot;Respuesta B&quot;},
+                        {name: &quot;C&quot;, txt: &quot;Respuesta C&quot;}
+                    ]
+                },
+                {
+                    conf: {num: 3, solution: 3, txt: &quot;Pregunta 3 ???&quot;},
+                    answers: [
+                        {name: &quot;A&quot;, txt: &quot;Respuesta A&quot;},
+                        {name: &quot;B&quot;, txt: &quot;Respuesta B&quot;},
+                        {name: &quot;C&quot;, txt: &quot;Respuesta C&quot;}
+                    ]
+                },
+                {
+                    conf: {num: 4, solution: 1, txt: &quot;Pregunta 4 ???&quot;},
+                    answers: [
+                        {name: &quot;A&quot;, txt: &quot;Respuesta A&quot;},
+                        {name: &quot;B&quot;, txt: &quot;Respuesta B&quot;},
+                        {name: &quot;C&quot;, txt: &quot;Respuesta C&quot;}
+                    ]
+                } // END QUESTION
+            ] // END QUESTIONS
+        } // END TEST
+        //, ... OTHERs TESTS
+    ] // END TESTS
+}</code></pre><h2>CONFIGURACIóN</h2><p>Estas opciones para la configuración pueden incluirse en la propiedad <strong>conf</strong>, estas son:</p>
+<ul>
+<li><strong>className</strong>       : {string} si se desea un nombre de clase específico para el contenedor </li>
+<li><strong>container</strong>       : {string} el id del elemento <em>DOM</em> el cual embeberá toda la UI</li>
+<li><strong>markerContainer</strong> : {string} igual para el <strong>Marcador</strong> (se aconseja en position fija (<em>fixed</em> ))</li>
+<li><strong>remove</strong>          : {boolean} limpia el <em>contenedor</em> antes de insertar el contenido</li>
+<li><strong>markerRemove</strong>    : {boolean} igual para el contenedor del <strong>Marcador</strong></li>
+<li><strong>stopOnSuccess</strong>   : {boolean} permite seleccionar múltiples respuestas hasta encontrar la correcta</li>
+<li><strong>digits</strong>          : {number} dígitos para mostrar en el <em>Marcador</em></li>
+<li><strong>precision</strong>       : {number} exactitud de los resultados</li>
+</ul>
+<h3>Autoría</h3><p>Creado y desarrollado complétamente por Juan Jose Guerra Haba. &lt;dinertron@gmail.com&gt;<br>Copyright 2016 &copy; <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#100;&#105;&#110;&#x65;&#x72;&#x74;&#114;&#x6f;&#110;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;" title="author">GuerraTron</a> 
+License GPL v3</p>
+<h3>Desarrollo &amp; Herramientas</h3><p>Creado con <a href="https://github.com/Nodeclipse/nodeclipse-1">Nodeclipse</a>
+ (<a href="http://marketplace.eclipse.org/content/nodeclipse">Eclipse Marketplace</a>, <a href="http://www.nodeclipse.org">site</a>)<br>Nodeclipse is free open-source project that grows with your contributions.<br>Depurado con Firefox + Firebug
+Ediciones adicionales y limplieza de código con Notepad++</p>
+<blockquote>
+<p>Espero que pueda serle de utilidad a alguien como lo ha sido para mí. En tal caso se agradecería email comentando su uso o sugerencias para futuras mejoras.<br>¡ POR FAVOR, MANTENER CRÉDITOS Y ENLACES. GRACIAS !</p>
+</blockquote>
+<pre class="prettyprint source"><code>... y como diría George Lucas: ¡Que la fuerza te acompañe!</code></pre></article>
+				</section>
+				
+
+
+
+
+
+</div>
+
+<nav>
+    <h2 class="itemsNav"><a href="index.html">Home</a></h2><div class="container-button-menu media600"><i class="button-menu media600">&nabla;</i></div><h3 class="itemsNav-media600 media600"><a href="index.html">Home</a></h3><div class="itemsNav"><h3>Classes</h3><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Classes</h4><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav"><h3>Events</h3><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Events</h4><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav"><h3>Namespaces</h3><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Namespaces</h4><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav"><h3>Tutorials</h3><ul><li><a href="tutorial-1_tuto_testron.es.html">Tuto. Tutorial Testron</a></li><li><a href="tutorial-2_examples_testron.es.html">Ejemplos Testron: con diferentes objetos de entrada</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Tutorials</h4><ul><li><a href="tutorial-1_tuto_testron.es.html">Tuto. Tutorial Testron</a></li><li><a href="tutorial-2_examples_testron.es.html">Ejemplos Testron: con diferentes objetos de entrada</a></li></ul></div>
+</nav>
+
+<br class="clear">
+
+
+	<footer>
+			<hr /> Documentación generada por <strong><a href='mailto:dinertron@gmail.com' title='author'>GuerraTron</a></strong> el <em>Fri May 27 2016 13:29:58 GMT+0200 (Hora de verano romance)</em> <br /> &copy; <em>Juan Jose Guerra Haba (c) 2016</em> <hr />
+	</footer>
+
+  <div id="credits">
+    <small class="doctronCredits">based on the <em>'Doctron template'</em> <a href="http://guerratron.github.io/doctron" title="Doctron GitHub template"><img src="img/doctron-github-mini.png" /></a> &emsp; by <a href="mailto:dinertron@gmail.com" /> <img src="img/guerratron-logo-mini.png" title="Guerratron" /></a></small>
+  </div>
+
+  
+    <select class="changeTheme" id="selCssTheme" default="light" title="change theme">
+      <option value="light" selected>Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  
+  
+<a data-scroll data-options='{ "easing": "easeOutQuad" }' class="totop" href="#" title="to Top"><span style="font-size: x-large">&Delta;</span></a>
+
+
+
+
+<script> prettyPrint(); </script>
+<script type="text/javascript" src="scripts/linenumber.js"> </script>
+<script type="text/javascript" src="scripts/smooth-scroll/smooth-scroll.min.js"> </script>
+<script type="text/javascript" src="scripts/template.js"> </script>
+
+</body>
+</html>

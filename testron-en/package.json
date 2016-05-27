@@ -1,0 +1,6 @@
+{
+  "name" : "testron/testron-en",
+  "version" : "1.0.0",
+  "description" : "Tests realization API",
+  "main" : "testron.js"
+}

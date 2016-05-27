@@ -1,0 +1,138 @@
+table{ caption-side: top; }
+caption{ display: inline-block; position: relative; width: 95%; float: left; caption-side: top;}
+ul, li, table, thead, tbody, tfoot, tr{
+    clear: both;
+}
+.testron{
+    border: 1px ridge maroon;
+    border-radius: 4px;
+    box-shadow: 2px 4px 6px lightGray;
+    padding: 1%;
+    margin: 1%;
+    background-color: silver;
+    background-image: url("../img/background-testron.png");
+}
+.testron:after{
+    content: "\0021ac by Guerratron <dinertron@gmail.com> "  url("../img/torotron_logo.png");
+    background:  url("../img/next.gif") no-repeat;
+}
+.testron>caption{
+    width: 95%;
+    color: whiteSmoke;
+    font-weight: bolder;
+    font-size: x-large;
+    text-shadow: 1px 1px 1px #333333;
+}
+.question{
+    border: 1px ridge maroon;
+    border-radius: 4px;
+    box-shadow: 2px 4px 6px lightGray;
+    padding: 1%;
+    margin: 1%;
+    background-color: lightYellow;
+    background-image: url("../img/background-question.png");
+    color: black;
+}
+.question>caption{
+    border: 1px solid lightGray;
+    border-radius: 6px;
+    box-shadow: 2px 4px 6px lightGray;
+    padding: 1%;
+    margin: 1%;
+    width: 95%;
+    font-weight: bolder;
+    background: whiteSmoke;
+}
+.question>caption:first-letter { text-transform: uppercase; }
+.question>caption .caption:first-letter { text-transform: uppercase; color: maroon; }
+.question>caption .caption { float:left;}
+.answer{
+    border: 1px solid lightGray;
+    border-radius: 6px;
+    box-shadow: 2px 4px 6px lightGray;
+    padding: 1%;
+    margin: 1%;
+    cursor: pointer;
+    background-color: white;
+    background-image: url("../img/background-answer.png");
+}
+.answer:hover{
+    background-color: #333333;
+    color: whiteSmoke;
+}
+.answer>caption{
+    box-shadow: 2px 4px 6px lightGray;
+    width: 95%;
+}
+.answer>.caption { color: blue;}
+.answer>.caption:first-letter { text-transform: uppercase; }
+
+.marker{
+    /*border: 1px solid maroon;
+    border-collapse: collapse;*/
+    display: inline;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    border-spacing: 2px 4px;
+    /*caption-side: inherit;*/
+    color: black;
+}
+.marker caption{
+    color: maroon;
+    font-size: larger;
+    text-shadow: 1px 1px 1px gray;
+    text-align: left;
+    margin-left: 1%;
+}
+.marker tr, .marker th, .marker td{
+    background: whiteSmoke;
+    vertical-align: middle;
+    padding: 2px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.marker th{
+    background: #999999;
+    color: lightYellow;
+}
+.marker tr>.marker-total{
+  text-align: right;
+}
+.marker-total{
+    text-align: right;
+    font-size: larger;
+    box-shadow: 1px 1px 2px gray;
+}
+.marker-total .marker-score{
+    color: darkGreen;
+    font-size: larger;
+    padding: 4px;
+    margin-right: 4px;
+}
+.marker .marker-values{
+    text-align: center;
+}
+.btn{
+    border: 1px solid silver;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px lightGray;
+    padding: 2px;
+    margin: 1px;
+    display: inline-block;
+    float: left;
+}
+.btn:hover{
+    background: silver;
+    color: white;
+    box-shadow: none;
+    cursor: pointer;
+}
+.btn-16{
+    width: 16px;
+}
+.btn img{
+    width: 100%;
+    position: relative;
+}

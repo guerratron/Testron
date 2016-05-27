@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		 <meta name="description" content="Testron :: App Javascript para preguntas tipo 'test' - by GUERRATRON" /> 
+		 <meta name="keywords" content="testron,js,code,debug,test,tests,questions,answers,quiz,guerratron" /> 
+    <title>JSDoc: Testron :: App Javascript para preguntas tipo 'test' - by GUERRATRON</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css" />
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+		<link type="text/css" rel="stylesheet" href="styles/template.css" />
+    <link id="cssTheme" type="text/css" rel="stylesheet" href="styles/template-light.css" />
+    <link type="text/css" rel="stylesheet" href="styles/template-responsive.css" />
+</head>
+
+<body>
+
+<div id="main">
+
+  
+    <a href="http://guerratron.github.io/Testron" />
+  
+      <img class="logo" src="img/testron_logo.png" />
+  
+    </a>
+  
+
+    <br />
+    <h1 class="page-title">Tutorial: Tuto. Tutorial Testron</h1>
+
+    <section>
+
+<header>
+    
+
+    <h2>Tuto. Tutorial Testron</h2>
+</header>
+
+<article>
+    <!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Testron - App Javascript para preguntas tipo 'test' - by Juanjo Guerra Haba" />
+		<link rel="icon" href="favicon.ico" sizes="24x24" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+		<title>Testron - App Javascript para preguntas tipo 'test' - by GuerraTron</title>
+        <link href="./css/tuto.css" media="screen" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/testron.min.js"></script>
+  </head>
+  
+  <body>
+
+    <div id="divTotal"><!-- BEGIN:: TOTAL DIV -->
+    
+      <header>
+        <span>Testron</span> <sub>v1.0.0</sub>
+        <p class="clearfix"></p>
+        <img src="img/testron_logo.png" alt="logo Testron" title="Testron" />
+        <blockquote>
+          Es una <b>API Javascript</b> para realizar preguntas tipo <i>test</i>.<br />
+          <blockquote>
+            <cite><small>Testron v1.0.0<br />
+            <address>copyright @ 2016 - Juan José Guerra Haba &lt;dinertron@gmail.com&gt; <img id="torotron" src="img/torotron_logo.png" alt="torotron" title="autor" /></address>
+            Licencia: Free. GPL.v3</small></cite>
+          </blockquote>
+        </blockquote>
+        <p class="clearfix"></p>
+      </header>
+      
+      <div id="container"><!-- BEGIN:: CONTAINER DIV -->
+        <h1>Tutorial Testron</h1>
+        <nav>
+			<span class="caption">ÍNDICE:</span>
+			<ul id="TOC">
+				<li><a href="#intro" title="introducción">Introducción</a></li>
+				<li><a href="#cargarScript" title="cargar el script">Carga</a></li>
+				<li><a href="#GUI" title="Interfaz Gráfica">GUI</a></li>
+				<li><a href="#colofon" title="colofón">Colofón</a></li>
+			</ul>
+			<br class="clearfix" />
+			
+			<!--<datalist id="browsers">
+				<option value="Internet Explorer">
+				<option value="Firefox">
+				<option value="Chrome">
+				<option value="Opera">
+				<option value="Safari">
+			</datalist>
+			<input list="browsers" />-->
+		</nav>
+        
+		<div id="intro" name="intro" class="intro">
+          <h3>Introducción:</h3>
+		  <div>
+			<p>Esto puede utilizarse como método preparatorio para exámenes académicos y oposiciones al Estado. Solo se necesita el archivo de preguntas con 
+            una estructura válida. 
+            Este archivo puede estar en formato <b>JSON</b> (objeto o cadena) u <b>Objeto Javascript</b> con una variable declarada.<br /> 
+            Esta rígida estructura puede contener parámetros de configuración (la propiedad <b>conf</b>) donde especificar, por ejemplo, los contenedores
+            de la <b><abbr title="Interfaz de Usuario">UI</<abbr></b> en los cuales embeber las preguntas y el <b>Marcador</b> con información y botones, 
+            o si se permiten seleccionar múltiples respuestas o una sóla, el <i><abbr title="juego de caracteres">charset</abbr></i> a utilizar, etc.</p>
+			<p class="PD">Aquí <b>test</b> representa a una <b>batería de preguntas</b>.</p>
+		  </div>
+          <p>Este <i><abbr title="espacio de nombres">namespace</abbr></i> utiliza profúsamente las funciones de utilidad de un objeto interno implementado 
+            en el mismo archivo, el objeto <b>'util'</b>, el cual contiene métodos y objetos estáticos, ellos pueden utilizarse externamente usando su 
+            <i>'<abbr title="ruta de clase">classpath</abbr>'</i>.<br />
+            También contiene las clases <b>Test</b>, <b>Test.Marker</b>, <b>Test.Question</b> y <b>Tests.Question.Answer</b>, pero es más confortable utilizar
+            un único método, el cual realiza todo el trabajo automáticamente: <br /> 
+            <code class="javascript">
+                <span><i class="ns">testron</i>.<i class="meth">parseTestrons</i> (<i class="obj">test</i>, <i class="obj">conf</i>)</span>
+            </code></p>
+        </div>
+
+        <div id="cargarScript" name="cargarScript">
+          <h3>Cargando y Utilizando el Script:</h3>
+		  <p>Por supuesto el primer paso será cargar el script en la zona <i>Head</i> de la página, por ejemplo:<br />
+            <code class="html">
+                <span>&emsp;&lt;<i class="meth">script</i> type=<i class="txt">"text/javascript"</i> src=<i class="txt">"testron.min.js"</i>&gt; &lt;/<i class="meth">script</i>&gt;</span>
+            </code>
+          </p>
+          <p>Una vez cargado, el script crea un <i><abbr title="espacio de nombres">namespace</abbr></i> global: <b>testron</b>, el cual contiene todo lo 
+            necesario para construir una batería de preguntas. Esto se logra usando un simple método '<b>parseTestrons (test, conf)</b>', el cual soporta
+            dos parámetros:</p>
+		  <ul>
+			<li><b>test</b>: Un objeto Javascript (o cadena) el cual contiene las preguntas en formato JSON. Debe ajustarse a una determinada estructura.</li>
+			<li><b>conf</b>: Un objeto Javascript para las opciones de configuración.</li>
+		  </ul>
+		  <details>
+			<summary>Observaciones: </summary>
+			Esta librería crea toda la <abbr title="Interfaz de Usuario">UI</abbr> que contiene las preguntas y una zona Marcador con un pequeño menú de botones 
+      de acción.<br />
+			<span class="PD">El <b>Marcador</b> debería situarse en <b>posición fija</b> (fixed) para una mejor visualización.</span>
+		  </details>
+        </div>
+				
+		<p class="alert">Aunque se ha hecho un esfuerzo para que la librería sea <b>cross-browser</b>, pueden observarse ligeras diferencias según el navegador
+    utilizado, especialmente "<abbr title="Internet Explorer">IE</abbr>".</p>
+
+        <div id="GUI" name="GUI">
+          <h3>GUI:</h3>
+          <p>La interfaz gráfica se auto-construye y se embebe en el elemento contenedor con el 'id' pasado como parámetro en la configuración. 
+          Todo el código necesario (Javascript y HTML, CSS se ha separado para permitir maryor personalización) se encuentra definido en el propio script
+          '<i>testron.js</i>', 
+          es el responsable de visualizar dos áreas distintas, la <b>Batería de Preguntas</b> y la zona del <b>Marcador</b>:</p>
+          <img src="./img/testronUI.png" alt="GUI" title="GUI" style="max-width:100%;" />
+          <p>La zona del <b>Marcador</b> calcula la puntuación actual y muestra otra información como el número de respuestas acertadas y fallidas, también 
+          está representada una zona de botones que simbolizan las siguientes acciones:</p>
+          <ul>
+            <li><img class="button button16" src="img/pencil.gif" alt="pencil icon" title="edit" /> Botón Editar: Muestra un 'textarea' con la estructura 
+            JSON completa para las preguntas actuales. Esto permite la edición del texto o su copiado.</li>
+            <li><img class="button button16" src="img/download.gif" alt="download icon" title="download" /> Botón Descargar: Permite la descarga del archivo
+            o un copiado del texto.</li>
+            <li><img class="button button16" src="img/undo.gif" alt="undo icon" title="reset" /> Botón Reiniciar: Reinicia las soluciones de las preguntas y
+            el Marcador.</li>
+          </ul>
+          <!--  <i class="button button16 btnEdit" title="botón idioma">&nbsp;</i> -->
+          <p class="alert">El 'botón de descargar' <img class="button button16" src="img/download.gif" alt="download icon" title="download" /> puede fallar en determinadas configuraciones y navegadores (<b style="font-size:larger; font-style:normal;">IE &#9785;</b>). -> SOLUCIÓN: Copiar el texto 'textarea' y guardarlo en un archivo de texto.</p>
+		</div>
+				
+		<div id="colofon" name="colofon">
+			<h3>COLOFÓN:</h3>
+			<p><b>Testron</b> ha sido diseñado como una herramienta para cualquiera que desee estudiar o prepararse para alguna dura prueba de conocimiento, esto 
+      podría ser útil como entrenamiento para exámenes de oposiciones oficiales (bomberos, policía, funcionario, etc...)</p>
+			<p class="alert">Yo recomiendo a todos los usuarios que utilicen <b>Testron</b> ya que puede serles muy útil. Para empezar se puede experimentar con los ejemplos propuestos para familiarizarse con ellos.</p>
+		</div><!-- END:: COLOFÓN DIV -->
+			
+      </div><!-- END:: CONTAINER DIV -->
+
+      <div id="footer" name="footer">
+        <p><b>AUTOR</b> : Yo espero que pueda serle tan útil como lo ha sido para mi. En ese caso se apreciaría un 'email' comentando su uso o sugerencias para 
+        futuras mejoras. (<a href="mailto:dinertron@gmail.com">guerraTron</a>) <br />
+          <span style='color:#DDDDDD;'>MANTENER CRÉDITOS Y ENLACES, GRACIAS !</span></p>
+        <p><i><span style='font-family:"Century Gothic","sans-serif"'>&nbsp;... Y COMO DIRÍA 'GEORGE LUCAS': QUE LA FUERZA TE ACOMPAÑE !!. !!</span></i></p>
+      </div>
+
+    </div><!-- END:: TOTAL DIV -->
+
+		<script type="text/javascript">
+			//MAIN
+      window.addEventListener('DOMContentLoaded',
+        function DOMContentLoaded(){
+					//UTILITY TO FORMAT CODE OF THIS PAGE, A FEW LINES SAVING.
+					function formatCode(classArray){
+						if(classArray.pop){	// if is an array
+							classArray.forEach(function(c){
+									var codeObjs = document.getElementsByClassName(c);
+									for(var i=0; i<codeObjs.length; i++){
+										var e = codeObjs[i];
+										if(e){ e.title = c; }
+									};
+							});
+						}
+					}
+					formatCode(["var", "ns", "prop", "param", "func", "obj", "meth", "nfunc", "txt", "comment", "bool"]);
+        }
+      , false);
+		</script>
+  </body>
+</html>
+
+</article>
+
+</section>
+
+</div>
+
+<nav>
+    <h2 class="itemsNav"><a href="index.html">Home</a></h2><div class="container-button-menu media600"><i class="button-menu media600">&nabla;</i></div><h3 class="itemsNav-media600 media600"><a href="index.html">Home</a></h3><div class="itemsNav"><h3>Classes</h3><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Classes</h4><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav"><h3>Events</h3><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Events</h4><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav"><h3>Namespaces</h3><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Namespaces</h4><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav"><h3>Tutorials</h3><ul><li><a href="tutorial-1_tuto_testron.es.html">Tuto. Tutorial Testron</a></li><li><a href="tutorial-2_examples_testron.es.html">Ejemplos Testron: con diferentes objetos de entrada</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Tutorials</h4><ul><li><a href="tutorial-1_tuto_testron.es.html">Tuto. Tutorial Testron</a></li><li><a href="tutorial-2_examples_testron.es.html">Ejemplos Testron: con diferentes objetos de entrada</a></li></ul></div>
+</nav>
+
+<br class="clear">
+
+
+	<footer>
+			<hr /> Documentación generada por <strong><a href='mailto:dinertron@gmail.com' title='author'>GuerraTron</a></strong> el <em>Fri May 27 2016 13:29:59 GMT+0200 (Hora de verano romance)</em> <br /> &copy; <em>Juan Jose Guerra Haba (c) 2016</em> <hr />
+	</footer>
+
+  <div id="credits">
+    <small class="doctronCredits">based on the <em>'Doctron template'</em> <a href="http://guerratron.github.io/doctron" title="Doctron GitHub template"><img src="img/doctron-github-mini.png" /></a> &emsp; by <a href="mailto:dinertron@gmail.com" /> <img src="img/guerratron-logo-mini.png" title="Guerratron" /></a></small>
+  </div>
+
+  
+    <select class="changeTheme" id="selCssTheme" default="light" title="change theme">
+      <option value="light" selected>Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  
+  
+<a data-scroll data-options='{ "easing": "easeOutQuad" }' class="totop" href="#" title="to Top"><span style="font-size: x-large">&Delta;</span></a>
+
+
+
+
+<script> prettyPrint(); </script>
+<script type="text/javascript" src="scripts/linenumber.js"> </script>
+<script type="text/javascript" src="scripts/smooth-scroll/smooth-scroll.min.js"> </script>
+<script type="text/javascript" src="scripts/template.js"> </script>
+
+</body>
+</html>
