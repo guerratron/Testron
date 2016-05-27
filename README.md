@@ -10,7 +10,7 @@
 # TESTRON
 [![Testron logo](testron-en/img/testron_logo.png "Testron GitHub page")](http://guerratron.github.io/Testron "Testron page")
 It is a **Javascript API** to perform questions of *test* type.
-[<img src="testron-en/img/testronUI.png" alt="testronUI_img" style="width: 150px;" />](img/testronUI.png "Testron UI")
+[<img src="testron-en/img/testronUI.png" alt="testronUI_img" style="max-width: 150px;" />](testron-en/img/testronUI.png "Testron UI")
 
 ## DESCRIPTION
 This can be used as a preparatory method for academic exams. You only need the question file with a valid structure. This file can be JSON format (object or string) or Javascript Object with one declared variable.  
