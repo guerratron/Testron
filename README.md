@@ -8,9 +8,9 @@
 > ----------------------------------------------------------------------------------------------------
 
 # TESTRON
-[![Testron logo](testron-en/img/testron_logo.png "Testron GitHub page")](http://guerratron.github.io/Testron "Testron page")
+[![Testron logo](img/testron_logo.png "Testron GitHub page")](http://guerratron.github.io/Testron "Testron page")
 It is a **Javascript API** to perform questions of *test* type.
-[<img src="testron-en/img/testronUI.png" alt="testronUI_img" style="max-width: 150px;" />](testron-en/img/testronUI.png "Testron UI")
+[<img src="img/testronUI.png" alt="testronUI_img" style="max-width: 150px;" />](img/testronUI.png "Testron UI")
 
 ## DESCRIPTION
 This can be used as a preparatory method for academic exams. You only need the question file with a valid structure. This file can be JSON format (object or string) or Javascript Object with one declared variable.  
@@ -182,7 +182,7 @@ This options for configuration may be included in **conf** property, these are:
 
 ### Authoring
 Created and developed entirely by Juan Jose Guerra Haba. &lt;dinertron@gmail.com&gt;
-![guerratron_logo](testron-en/img/logo_toro_mini.png "GuerraTron logo")    
+![guerratron_logo](img/logo_toro_mini.png "GuerraTron logo")    
 Copyright 2016 &copy; [GuerraTron](&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#100;&#105;&#110;&#x65;&#x72;&#x74;&#114;&#x6f;&#110;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d; "author") 
 License GPL v3
 
