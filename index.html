@@ -85,27 +85,23 @@
         <h1><a id="testron" class="anchor" href="#testron" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testron</h1>
         
         <p>It is a <strong>Javascript API</strong> to perform questions of <em>test</em> type.</p>
+        <a href="img/testronUI.png" title="Testron UI"><img src="img/testronUI.png" alt="testronUI_img" style="width:150px;" /></a>
+        <hr>
+      </blockquote>
 
-<hr>
-</blockquote>
+      <p>This can be used as a preparatory method for academic exams. You only need the question file with a valid structure. This file can be JSON format (object or string) or Javascript Object with one declared variable.<br>
+      This rigid structure may contain configuration parameters (the <strong>conf</strong> property) where specify eg the UI containers in which are embed questions and the Marker with information and buttons, or if allowed to select multiple answers or only one, the charset to use, etc.</p>
 
-<h1>
+      <blockquote>
+        <p>This <em>namespace</em> relies heavily on the utility functions of an internal object implemented in the same file, the <strong>'util'</strong> object, which contains methods and objects statics, they could be used outside the same it, using its <em>'classpath'</em>.<br>
+        It also contains the class <strong>Test</strong>, <strong>Test.Marker</strong>, <strong>Test.Question</strong> and <strong>Tests.Question.Answer</strong>, but is more comfortable to use one unique method (<strong>parseTestrons</strong>), which will does all job automaticly:  </p>
 
-<p><a href="img/testronUI.png" title="Testron UI"><img src="img/testronUI.png" alt="testronUI_img" style="width:150px;" /></a></p>
+        <div class="highlight highlight-source-js"><pre>
+         <span class="pl-k">var</span> tests <span class="pl-k">=</span> <span class="pl-smi">testron</span>.<span class="pl-en">parseTestrons</span> (test, conf);  
+        </pre></div>
 
-<p>This can be used as a preparatory method for academic exams. You only need the question file with a valid structure. This file can be JSON format (object or string) or Javascript Object with one declared variable.<br>
-This rigid structure may contain configuration parameters (the <strong>conf</strong> property) where specify eg the UI containers in which are embed questions and the Marker with information and buttons, or if allowed to select multiple answers or only one, the charset to use, etc.  </p>
-
-<blockquote>
-<p>This <em>namespace</em> relies heavily on the utility functions of an internal object implemented in the same file, the <strong>'util'</strong> object, which contains methods and objects statics, they could be used outside the same it, using its <em>'classpath'</em>.<br>
-It also contains the class <strong>Test</strong>, <strong>Test.Marker</strong>, <strong>Test.Question</strong> and <strong>Tests.Question.Answer</strong>, but is more comfortable to use one unique method (<strong>parseTestrons</strong>), which will does all job automaticly:  </p>
-
-<div class="highlight highlight-source-js"><pre>
- <span class="pl-k">var</span> tests <span class="pl-k">=</span> <span class="pl-smi">testron</span>.<span class="pl-en">parseTestrons</span> (test, conf);  
-</pre></div>
-
-<p>Here <em>test</em> represent a <em>questions-battery</em></p>
-</blockquote>
+        <p>Here <em>test</em> represent a <em>questions-battery</em></p>
+      </blockquote>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FEATURES</h2>
