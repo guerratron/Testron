@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		 <meta name="description" content="Testron :: Javascript app for questions of 'test' type - by GUERRATRON" /> 
+		 <meta name="keywords" content="testron,js,code,debug,test,tests,questions,answers,quiz,guerratron" /> 
+    <title>JSDoc: Testron :: Javascript app for questions of 'test' type - by GUERRATRON</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css" />
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+		<link type="text/css" rel="stylesheet" href="styles/template.css" />
+    <link id="cssTheme" type="text/css" rel="stylesheet" href="styles/template-light.css" />
+    <link type="text/css" rel="stylesheet" href="styles/template-responsive.css" />
+</head>
+
+<body>
+
+<div id="main">
+
+  
+    <a href="http://guerratron.github.io/Testron" />
+  
+      <img class="logo" src="img/testron_logo.png" />
+  
+    </a>
+  
+
+    <br />
+    <h1 class="page-title">Namespace: testron</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>testron</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>This 'namespace' is the starting point for building tests of 'testrons' type. 
+It contains the methods and objects necessary for even build all full UI.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0.0b</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>GuerraTron - 2015. &lt;dinertron@gmail.com> - GPL-v3</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line2">line 2</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Examples</h3>
+            
+        <p class="code-caption">To create complete Test UI:</p>
+    
+    <pre class="prettyprint"><code>var tests = testron.parseTestrons(                                  objJS,                                   {container: 'divUI',                                    markerContainer: 'divMarker'                                  });</code></pre>
+
+        <p class="code-caption">Using the events:</p>
+    
+    <pre class="prettyprint"><code>testron.onOk(function(answer, marker){  alert("OK: " +         answer.parent.num + "[" +         answer.name + "] ). " +         marker.score);  contMarker.style.visibility = "visible";});testron.onFinished(function(test){  alert("FINISHED TEST: " + test.id);});</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+				<div class="subsection-body-items">
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".alpha"><span class="type-signature">(private, static) </span>alpha<span class="type-signature"></span></h4>
+
+
+<p class="summary">Static Alphanumeric variable for "id" generated</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".clickAnswerListener"><span class="type-signature">(private, static) </span>clickAnswerListener<span class="type-signature"></span></h4>
+
+
+<p class="summary">Event Listener for clicks Answer. This must be a function with two parameters: Answer object and Marker object</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".failAnswerListener"><span class="type-signature">(private, static) </span>failAnswerListener<span class="type-signature"></span></h4>
+
+
+<p class="summary">Event Listener for failed Answer. This must be a function with two parameters: Answer object and Marker object</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".finishedListener"><span class="type-signature">(private, static) </span>finishedListener<span class="type-signature"></span></h4>
+
+
+<p class="summary">Event to Listener from finished Test. The listener passed must be a function with one parameter: Test object</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line73">line 73</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".nextQuestionListener"><span class="type-signature">(private, static) </span>nextQuestionListener<span class="type-signature"></span></h4>
+
+
+<p class="summary">Event to Listener from next Question. The listener passed must be a function with two parameters: Question object and Marker object</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".prefImg64GIF"><span class="type-signature">(private, static) </span>prefImg64GIF<span class="type-signature"></span></h4>
+
+
+<p class="summary">Static pref for Base64 images with 'monocrome GIF' format</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".successAnswerListener"><span class="type-signature">(private, static) </span>successAnswerListener<span class="type-signature"></span></h4>
+
+
+<p class="summary">Event Listener for successed Answer. This must be a function with two parameters: Answer object and Marker object</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line53">line 53</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".t.id"><span class="type-signature">(static) </span>t.id<span class="type-signature"> :string</span></h4>
+
+
+<p class="summary">obtains this identificator</p>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line605">line 605</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".t.utils"><span class="type-signature">(static) </span>t.utils<span class="type-signature"> :Object</span></h4>
+
+
+<p class="summary">The utils object</p>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>generateId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>obtains a unique identificator</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.toPrecision</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Obtains a number which is fixed to exact precision</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.toDecimals</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Obtains a number which is fixed to concrete decimals</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.toDigits</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Obtains a number which is fixed to exact digits</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.icos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Is a object which contains icons on base64 format</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.addEvent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Cross-browser Method for adding events</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.editListener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Listener for shooting of change events (editArea).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.saveListener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Listener for shooting of save events (button).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.copyClipboardListener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Listener for shooting of copy events (clipboard).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.resetListener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>reset the listener for this object. (non-implementable currently)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Util.setTimerContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>set a timer for this container element</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line643">line 643</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".tests"><span class="type-signature">(private, static) </span>tests<span class="type-signature"></span></h4>
+
+
+<p class="summary">testrons array</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+<h4 class="name" id=".updateMarkerListener"><span class="type-signature">(private, static) </span>updateMarkerListener<span class="type-signature"></span></h4>
+
+
+<p class="summary">Event to Listener from update Marker. The listener passed must be a function with one parameter: Marker object</p>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+						</div>
+					
+				</div>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+				<div class="subsection-body-items">
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.addTest"><span class="type-signature">(static) </span>t.addTest<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+    <p class="summary">Add a Test to array</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line614">line 614</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.filterContainer"><span class="type-signature">(static) </span>t.filterContainer<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+    <p class="summary">Filter the configuration object to sanitize</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line665">line 665</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the sanitized configuration object</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.getTests"><span class="type-signature">(static) </span>t.getTests<span class="signature">()</span><span class="type-signature"> &rarr; {Array:tests}</span></h4>
+
+    
+    <p class="summary">Getter method</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line610">line 610</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array:tests</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.merge"><span class="type-signature">(static) </span>t.merge<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+    <p class="summary">Method to merge the properties from two objects (configuration)</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line675">line 675</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the merged object</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.parseTestrons"><span class="type-signature">(static) </span>t.parseTestrons<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+    <p class="summary">Parse a JSON string which represents the complete testron suite</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line660">line 660</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the updated tests array</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.removeTest"><span class="type-signature">(static) </span>t.removeTest<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+    <p class="summary">Remove a Test from array</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line624">line 624</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the updated tests array</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.removeTestIndex"><span class="type-signature">(static) </span>t.removeTestIndex<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+    <p class="summary">Remove a Test from array, from its index</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line619">line 619</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the updated tests array</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.resetTests"><span class="type-signature">(static) </span>t.resetTests<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+    <p class="summary">Remove ALL Test from array</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line628">line 628</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".t.toJSON"><span class="type-signature">(static) </span>t.toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+    <p class="summary">Obtain a JSON string which represents the complete testron suite</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line670">line 670</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>JSON string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+						</div>
+					
+				</div>
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+				<div class="subsection-body-items">
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".event:t.onClick">t.onClick</h4>
+
+    
+    <p class="summary">Event to Listener from <b>clicks Answer</b>.</p>
+    
+
+
+
+<div class="description">
+    <p>The listener passed must be a function with two parameters: Answer object and Marker object</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line691">line 691</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".event:t.onFail">t.onFail</h4>
+
+    
+    <p class="summary">Event to Listener from <b>failed Answer</b>.</p>
+    
+
+
+
+<div class="description">
+    <p>The listener passed must be a function with two parameters: Answer object and Marker object</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line686">line 686</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".event:t.onFinished">t.onFinished</h4>
+
+    
+    <p class="summary">Event to Listener from <b>finished Test</b>.</p>
+    
+
+
+
+<div class="description">
+    <p>The listener passed must be a function with one parameter: Test object</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line706">line 706</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".event:t.onMarker">t.onMarker</h4>
+
+    
+    <p class="summary">Event to Listener from <b>update Marker</b>.</p>
+    
+
+
+
+<div class="description">
+    <p>The listener passed must be a function with one parameter: Marker object</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line701">line 701</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".event:t.onNext">t.onNext</h4>
+
+    
+    <p class="summary">Event to Listener from <b>next Question</b>.</p>
+    
+
+
+
+<div class="description">
+    <p>The listener passed must be a function with two parameters: Question object and Marker object</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line696">line 696</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+						<div class="subsection-body-item">
+							
+
+    
+
+    <h4 class="name" id=".event:t.onOk">t.onOk</h4>
+
+    
+    <p class="summary">Event to Listener from <b>successed Answer</b>.</p>
+    
+
+
+
+<div class="description">
+    <p>The listener passed must be a function with two parameters: Answer object and Marker object</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testron.en.js.html">testron.en.js</a>, <a href="testron.en.js.html#line681">line 681</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+					
+				</div>
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2 class="itemsNav"><a href="index.html">Home</a></h2><div class="container-button-menu media600"><i class="button-menu media600">&nabla;</i></div><h3 class="itemsNav-media600 media600"><a href="index.html">Home</a></h3><div class="itemsNav"><h3>Classes</h3><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Classes</h4><ul><li><a href="module-testron.Test.html">Test</a></li><li><a href="module-testron_Question_Test.Answer.html">Answer</a></li><li><a href="module-testron_Test.Marker.html">Marker</a></li><li><a href="module-testron_Test.Question.html">Question</a></li></ul></div><div class="itemsNav"><h3>Events</h3><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Events</h4><ul><li><a href="testron.html#.event:t.onClick">t.onClick</a></li><li><a href="testron.html#.event:t.onFail">t.onFail</a></li><li><a href="testron.html#.event:t.onFinished">t.onFinished</a></li><li><a href="testron.html#.event:t.onMarker">t.onMarker</a></li><li><a href="testron.html#.event:t.onNext">t.onNext</a></li><li><a href="testron.html#.event:t.onOk">t.onOk</a></li></ul></div><div class="itemsNav"><h3>Namespaces</h3><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Namespaces</h4><ul><li><a href="testron.html">testron</a></li></ul></div><div class="itemsNav"><h3>Tutorials</h3><ul><li><a href="tutorial-1_tuto_testron.en.html">Tuto. Testron Tutorial</a></li><li><a href="tutorial-2_examples_testron.en.html">Testron Examples: with different input objects</a></li></ul></div><div class="itemsNav-media600 media600"><h4>Tutorials</h4><ul><li><a href="tutorial-1_tuto_testron.en.html">Tuto. Testron Tutorial</a></li><li><a href="tutorial-2_examples_testron.en.html">Testron Examples: with different input objects</a></li></ul></div>
+</nav>
+
+<br class="clear">
+
+
+	<footer>
+			<hr /> Documentation generated by <strong><a href='mailto:dinertron@gmail.com' title='author'>GuerraTron</a></strong> on <em>Fri May 27 2016 13:30:11 GMT+0200 (Hora de verano romance)</em> <br /> &copy; <em>Juan Jose Guerra Haba (c) 2016</em> <hr />
+	</footer>
+
+  <div id="credits">
+    <small class="doctronCredits">based on the <em>'Doctron template'</em> <a href="http://guerratron.github.io/doctron" title="Doctron GitHub template"><img src="img/doctron-github-mini.png" /></a> &emsp; by <a href="mailto:dinertron@gmail.com" /> <img src="img/guerratron-logo-mini.png" title="Guerratron" /></a></small>
+  </div>
+
+  
+    <select class="changeTheme" id="selCssTheme" default="light" title="change theme">
+      <option value="light" selected>Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  
+  
+<a data-scroll data-options='{ "easing": "easeOutQuad" }' class="totop" href="#" title="to Top"><span style="font-size: x-large">&Delta;</span></a>
+
+
+
+
+<script> prettyPrint(); </script>
+<script type="text/javascript" src="scripts/linenumber.js"> </script>
+<script type="text/javascript" src="scripts/smooth-scroll/smooth-scroll.min.js"> </script>
+<script type="text/javascript" src="scripts/template.js"> </script>
+
+</body>
+</html>

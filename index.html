@@ -8,11 +8,22 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/tuto.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/template.css" media="screen">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="javascript/main.js"></script> -->
+		<!-- SLICK SLIDE
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/> -->
+		<link rel="stylesheet" type="text/css" href="javascripts/slick/slick-min.css"/>
   </head>
   <body>
     <section class="page-header">
+      <img src="img/sello_js.png" alt="js_ico" title="script Javascript" style="position:absolute; left:2%;" />
       <h1 class="project-name">Testron</h1>
+      <img src="img/testron_logo.png" alt="testron_logo" title="Testron logo" />
       <h2 class="project-tagline">Javascript app for questions of &#39;test&#39; type. </h2>
+      <a href="http://guerratron.github.io/guerratron.github.io/" class="btn" style=""><img src="img/home.png" alt="home_icon" title="Guerratron GitHub home page" /></a>
+			<a href="doc/index.html" class="btn">Documentation</a>
       <a href="https://github.com/guerratron/Testron" class="btn">View on GitHub</a>
       <a href="https://github.com/guerratron/Testron/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/guerratron/Testron/tarball/master" class="btn">Download .tar.gz</a>
@@ -20,13 +31,54 @@
 
     <section class="main-content">
       <blockquote>
-<hr>
+        <hr />
+        <nav>
+          <span class="caption">INDEX:</span>
+          <ul id="TOC">
+            <li><a data-scroll href="#wrappertracer" title="Explanatory">Explanatory</a></li>
+            <li><a data-scroll href="#features" title="script features">Features</a></li>
+            <li><a data-scroll href="#usage" title="the script usage">Usage</a></li>
+            <li><a data-scroll href="#public-api" title="methods and public properties">Public API</a></li>
+            <li><a data-scroll href="#authoring" title="script authorship">Authorship</a></li>
+            <li><a data-scroll href="#developing-tools" title="tools for code developing">Tools</a></li>
+          </ul>
+          <br class="clearfix" />
+        </nav>
+        
+        <section class="carousel" style="text-align: center;">
+        <!-- SLICK SLIDE
+          <div class="slick-slide-target1">
+            <div>
+              <a href="img/zonesGUI.png"> <img src="img/zonesGUI.png" alt="GUI areas" title="GUI areas" /> </a>
+              <span style="font-size:smaller;">buttons, canvas, options, footer, ...</span>
+            </div>
+            <div>	<a href="img/zoneOptions2.png"> <img src="img/zoneOptions2.png" alt="GUI options area" title="options area" /> </a> </div>
+            <div>
+              <a href="img/zoneCoordinates.png"> <img src="img/zoneCoordinates.png" alt="GUI coordinates area" title="coordinates area" /> </a>
+              <span style="font-size:smaller;">Coordinates area</span>
+            </div>
+            <div>	<a href="img/ex1.jpg"> <img src="img/ex1.jpg" alt="example-1" title="bexample 1" /> </a> </div>
+            <div>	<a href="img/ex2.png"> <img src="img/ex2.png" alt="example-2" title="example 2" /> </a> </div>
+            <div>	<a href="img/ex3.png"> <img src="img/ex3.png" alt="example-3" title="example 3" /> </a> </div>
+            <div>	<a href="img/ex4.png"> <img src="img/ex4.png" alt="example-4" title="example 4" /> </a> </div>
+            <div>	<a href="img/ex5.png"> <img src="img/ex5.png" alt="example-5" title="example 5" /> </a> </div>
+            <div>	<a href="img/canvasShapesButtons.png"> <img src="img/canvasShapesButtons.png" alt="GUI buttons area" title="buttons area" /> </a> </div>
+          </div> -->
+        </section>
+        
+        <header>'Testron' (API JS) - Javascript app for questions of 'test' type.<br>
+                Library: 'PolyArea'.<br>
+                Author: Juan José Guerra Haba - <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#100;&#105;&#110;&#x65;&#x72;&#x74;&#114;&#x6f;&#110;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#100;&#105;&#110;&#x65;&#x72;&#x74;&#114;&#x6f;&#110;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a> - 2016 May<br>
+                License: Free BSD. &amp; Open GPL v.3. Keep credit, please.<br>
+                Versión: 1.0.0 BETA<br>
+                File: testron.js               Main Class: testron.Test.js  
+        </header>
 
-<p>'Testron' (API JS) - Javascript app for questions of 'test' type.<br>
-  Author: Juan José Guerra Haba - <a href="mailto:dinertron@gmail.com">dinertron@gmail.com</a> - 2016 May<br>
-  License: Free BSD. &amp; Open GPL v.3. Keep credit, please.<br>
-  Versión: 1.0.0 BETA<br>
-  File: testron.js               Main Class: testron.Test.js  </p>
+        <hr />
+
+        <h1><a id="testron" class="anchor" href="#testron" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testron</h1>
+        
+        <p>It is a <strong>Javascript API</strong> to perform questions of <em>test</em> type.</p>
 
 <hr>
 </blockquote>
@@ -36,7 +88,7 @@
 
 <p><a href="http://guerratron.github.io/Testron" title="Testron page"><img src="img/testron_logo.png" alt="Testron logo" title="Testron GitHub page"></a>
 It is a <strong>Javascript API</strong> to perform questions of <em>test</em> type.
-<a href="img/testronUI.png" title="Testron UI"><img src="img/testronUI.png" alt="testronUI_img"></a></p>
+<a href="img/testronUI.png" title="Testron UI"><img src="img/testronUI.png" alt="testronUI_img" style="width:150px;" /></a></p>
 
 <h2>
 <a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DESCRIPTION</h2>
